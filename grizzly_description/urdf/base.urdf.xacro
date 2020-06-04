@@ -51,55 +51,55 @@ This program contains the description of the robot base model for the Clearpath 
 
   <!-- PROPERTY LIST -->
   <!--All units in m-kg-s-radians unit system -->
-  <property name="M_PI"
+  <xacro:property name="M_PI"
             value="3.1415926535897931" />
   <!-- Main Body-base-->
   <!-- Location of com : center of mass -->
-  <property name="base_x_com"
+  <xacro:property name="base_x_com"
             value="-0.08748000" />
-  <property name="base_y_com"
+  <xacro:property name="base_y_com"
             value="-0.00085000" />
-  <property name="base_z_com"
+  <xacro:property name="base_z_com"
             value="0.09947000" />
   <!-- Size of the base-->
-  <property name="base_x_size"
+  <xacro:property name="base_x_size"
             value="0.708" />
-  <property name="base_y_size"
+  <xacro:property name="base_y_size"
             value="0.3" />
-  <property name="base_z_size"
+  <xacro:property name="base_z_size"
             value="1.826" />
 
   <!-- Mass of the base-->
-  <property name="base_mass" value="487" />
+  <xacro:property name="base_mass" value="487" />
 
   <!-- Mass of the front axle-->
-  <property name="front_axle_mass" value="113" />
+  <xacro:property name="front_axle_mass" value="113" />
 
   <!--Inertial values for the front_axle at center of mass, aligned with coordinate system. Units are kg*m^2-->
-  <property name="front_axle_ixx_com_cs"
+  <xacro:property name="front_axle_ixx_com_cs"
             value="0.60216370" />
-  <property name="front_axle_ixy_com_cs"
+  <xacro:property name="front_axle_ixy_com_cs"
             value="-0.02364198" />
-  <property name="front_axle_ixz_com_cs"
+  <xacro:property name="front_axle_ixz_com_cs"
             value="-0.11972132" />
-  <property name="front_axle_iyy_com_cs"
+  <xacro:property name="front_axle_iyy_com_cs"
             value="1.73859574" />
-  <property name="front_axle_iyz_com_cs"
+  <xacro:property name="front_axle_iyz_com_cs"
             value="-0.00154437" />
-  <property name="front_axle_izz_com_cs"
+  <xacro:property name="front_axle_izz_com_cs"
             value="2.02955229" />
   <!--Inertial values for the base at center of mass, aligned with coordinate system. Units are kg*m^2-->
-  <property name="base_ixx_com_cs"
+  <xacro:property name="base_ixx_com_cs"
             value="0.60216370" />
-  <property name="base_ixy_com_cs"
+  <xacro:property name="base_ixy_com_cs"
             value="-0.02364198" />
-  <property name="base_ixz_com_cs"
+  <xacro:property name="base_ixz_com_cs"
             value="-0.11972132" />
-  <property name="base_iyy_com_cs"
+  <xacro:property name="base_iyy_com_cs"
             value="1.73859574" />
-  <property name="base_iyz_com_cs"
+  <xacro:property name="base_iyz_com_cs"
             value="-0.00154437" />
-  <property name="base_izz_com_cs"
+  <xacro:property name="base_izz_com_cs"
             value="2.02955229" />
 
   <!-- BASE-FOOTPRINT -->
@@ -155,18 +155,18 @@ This program contains the description of the robot base model for the Clearpath 
   </gazebo>
 
   <!-- Add a sensor anchor link that points to the center of the robot top plate -->
-  <grizzly_tf parent="base_link" name="sensor_anchor_link" 
-    translateX="0" translateY="0" translateZ="0.45" 
+  <xacro:grizzly_tf parent="base_link" name="sensor_anchor_link"
+    translateX="0" translateY="0" translateZ="0.45"
     rotateX="0.0" rotateY="0.0" rotateZ="0.0"/>
 
   <!-- Add a sensor anchor link for the imu -->
-  <grizzly_tf parent="sensor_anchor_link" name="imu_link" 
-    translateX="-0.788" translateY="0" translateZ="-0.118" 
+  <xacro:grizzly_tf parent="sensor_anchor_link" name="imu_link"
+    translateX="-0.788" translateY="0" translateZ="-0.118"
     rotateX="3.1415" rotateY="1.5701" rotateZ="0" />
 
   <!-- DECORATIONS -->
   <!-- Bumpers -->
-  <grizzly_part parent="base_footprint"
+  <xacro:grizzly_part parent="base_footprint"
                 name="bumper"
                 mesh="bumper"
                 colour="Yellow"
@@ -181,14 +181,14 @@ This program contains the description of the robot base model for the Clearpath 
   </gazebo>
 
   <!-- Back wheels -->
-  <grizzly_wheel fb="back"
+  <xacro:grizzly_wheel fb="back"
                  lr="left"
                  parent="base_link"
                  translateX="-1.75"
                  translateY="1.75"
                  translateZ="0"
                  flipY="0" />
-  <grizzly_wheel fb="back"
+  <xacro:grizzly_wheel fb="back"
                  lr="right"
                  parent="base_link"
                  translateX="-1.75"
@@ -246,14 +246,14 @@ This program contains the description of the robot base model for the Clearpath 
   </gazebo>
 
   <!-- Front wheels -->
-  <grizzly_wheel fb="front"
+  <xacro:grizzly_wheel fb="front"
                  lr="left"
                  parent="front_axle_link"
                  translateX="0"
                  translateY="1.75"
                  translateZ="0"
                  flipY="0" />
-  <grizzly_wheel fb="front"
+  <xacro:grizzly_wheel fb="front"
                  lr="right"
                  parent="front_axle_link"
                  translateX="0"

@@ -25,9 +25,9 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-This program is a macro for adding decorative parts to the Clearpath Grizzly model. 
-It is assumed that such parts are fixed to others, and those other parts' inertial 
-parameters account for the decorative parts. Decorative parts currently do not 
+This program is a macro for adding decorative parts to the Clearpath Grizzly model.
+It is assumed that such parts are fixed to others, and those other parts' inertial
+parameters account for the decorative parts. Decorative parts currently do not
 incorporate collision.
 -->
 <robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
@@ -35,34 +35,34 @@ incorporate collision.
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://ros.org/wiki/xacro"
        name="grizzly_tf">
-  <property name="x_com"
+  <xacro:property name="x_com"
             value="0.00000000" />
   <!-- com : center of mass -->
-  <property name="y_com"
+  <xacro:property name="y_com"
             value="0.00000000" />
   <!-- com : center of mass -->
-  <property name="z_com"
+  <xacro:property name="z_com"
             value="0.00000000" />
   <!-- com : center of mass -->
-  <property name="mass"
+  <xacro:property name="mass"
             value="0.1" />
   <!-- in kg-->
-  <property name="ixx_com_cs"
+  <xacro:property name="ixx_com_cs"
             value="0.01" />
   <!-- at center of mass aligned with coordinate system, kg*m^2-->
-  <property name="ixy_com_cs"
+  <xacro:property name="ixy_com_cs"
             value="0.0" />
   <!-- at center of mass aligned with coordinate system, kg*m^2-->
-  <property name="ixz_com_cs"
+  <xacro:property name="ixz_com_cs"
             value="0.0" />
   <!-- at center of mass aligned with coordinate system, kg*m^2-->
-  <property name="iyy_com_cs"
+  <xacro:property name="iyy_com_cs"
             value="0.01" />
   <!-- at center of mass aligned with coordinate system, kg*m^2-->
-  <property name="iyz_com_cs"
+  <xacro:property name="iyz_com_cs"
             value="0.00" />
   <!-- at center of mass aligned with coordinate system, kg*m^2-->
-  <property name="izz_com_cs"
+  <xacro:property name="izz_com_cs"
             value="0.01" />
   <!-- at center of mass aligned with coordinate system, kg*m^2-->
   <xacro:macro name="grizzly_tf"
